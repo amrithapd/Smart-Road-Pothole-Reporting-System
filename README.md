@@ -1,1 +1,0 @@
-# Smart-Road-Pothole-Reporting-System

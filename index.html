@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Road – India</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🇮🇳 Smart Road – Pothole Reporting</h1>
+
+<div class="box">
+    <h2>Report a Road Issue</h2>
+
+    <form method="POST">
+        <p><b>Location:</b> India (Fixed)</p>
+
+        <textarea name="desc" placeholder="Describe the issue" required></textarea>
+
+        <button type="submit">Submit Report</button>
+    </form>
+
+    {% if message %}
+        <p class="success">{{ message }}</p>
+    {% endif %}
+</div>
+
+<div class="box">
+    <h2>Track Report</h2>
+
+    <form method="POST" action="/track">
+        <input type="text" name="rid" placeholder="Enter Report ID" required>
+        <button type="submit">Track</button>
+    </form>
+
+    {% if result %}
+        <div class="result">
+            <p><b>ID:</b> {{ result.id }}</p>
+            <p><b>Status:</b> {{ result.status }}</p>
+            <p><b>Description:</b> {{ result.desc }}</p>
+            <p><b>Time:</b> {{ result.time }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
